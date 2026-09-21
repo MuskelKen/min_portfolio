@@ -1,0 +1,26 @@
+body {
+    padding: 80px;
+    font-family: "Roboto Mono", Tahoma, Geneva, Verdana, sans-serif;
+    isolation: isolate;
+}   
+
+h1 {
+    margin-bottom: 60px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+.sirkel {
+  width: 2500px;
+  height: 2500px;
+  background-color: #4b65da;
+  border-radius: 60%;
+
+  position: fixed;
+  top: 550px;
+  right: 550px;
+  z-index: -1;
+  pointer-events: none;
+}
