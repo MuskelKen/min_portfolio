@@ -1,26 +1,112 @@
 body {
-    padding: 80px;
-    font-family: "Roboto Mono", Tahoma, Geneva, Verdana, sans-serif;
-    isolation: isolate;
-}   
-
-h1 {
-    margin-bottom: 60px;
+  margin: 0;
+  background-color: black;
 }
 
-section {
-    margin-bottom: 60px;
+
+nav {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  background: transparent;
+  margin-bottom: 50px;
 }
 
-.sirkel {
-  width: 2500px;
-  height: 2500px;
-  background-color: #4b65da;
-  border-radius: 60%;
+ul {
+  position: relative;
+  display: flex;
+  gap: 60px;
+  top: auto;
+  bottom: 0;
+  justify-content: center;
+}
 
-  position: fixed;
-  top: 550px;
-  right: 550px;
-  z-index: -1;
-  pointer-events: none;
+li {
+  color: rgb(245, 217, 184);
+  font-family: "Roboto Mono";
+  font-weight: 500;
+  list-style-type: none;
+  font-size: 1.2vw;
+  text-shadow: 1px 1px 5px black;
+  user-select: none;
+}
+
+a{
+  text-decoration: none;
+  color: rgb(245, 217, 184);
+  font-family: "Roboto Mono";
+  list-style-type: none;
+  font-size: 1.2vw;
+  text-shadow: 1px 1px 5px black;
+  user-select: none;
+  font-family: "Roboto Mono";
+}
+
+li:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.Character_background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 1;
+}
+
+.WELCOME_text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-family: Impact, sans-serif;
+  font-size: 19vw;
+  line-height: 1;
+  color: rgb(245, 217, 184);
+  text-shadow: 2px 2px 25px black;
+  user-select: none;
+  z-index: 2;
+}
+
+.Character_Object {
+  position: absolute;
+  top: auto;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 85%;
+  width: auto;
+  z-index: 3;
+  animation: Character_Object_Idle 6s ease-in-out infinite;
+}
+
+@keyframes Character_Object_Idle {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateX(-50.2%) translateY(-1.12px) rotate(0.9deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Character_Object {
+    animation: none;
+  }
 }
